@@ -40,7 +40,7 @@
         
         /* Header & Navigation */
         header {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.95);
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
@@ -84,30 +84,47 @@
         /* Hero Section */
         .hero {
             padding: 150px 0 100px;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            color: white;
             text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.8) 0%, rgba(59, 130, 246, 0.7) 100%);
+            mix-blend-mode: overlay;
         }
         
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
         
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
-            color: var(--dark);
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .hero-title {
             font-size: 1.5rem;
-            color: var(--primary);
+            color: #e0f2fe;
             margin-bottom: 15px;
         }
         
         .hero p {
             font-size: 1.25rem;
-            color: var(--secondary);
+            color: #e0e7ff;
             margin-bottom: 30px;
         }
         
@@ -135,17 +152,18 @@
         .btn-primary:hover {
             background-color: var(--primary-dark);
             transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
         }
         
         .btn-outline {
-            border: 2px solid var(--primary);
-            color: var(--primary);
+            border: 2px solid white;
+            color: white;
             background: transparent;
         }
         
         .btn-outline:hover {
-            background-color: var(--primary);
-            color: white;
+            background-color: white;
+            color: var(--primary);
         }
         
         /* Sections */
@@ -243,6 +261,11 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
         }
         
         .skill-category h3 {
@@ -289,11 +312,12 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .project-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
         
         .project-content {
@@ -624,6 +648,9 @@
                         <span class="skill-tag">Python</span>
                         <span class="skill-tag">SQL</span>
                         <span class="skill-tag">C++</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
                     </div>
                 </div>
                 
@@ -633,6 +660,7 @@
                         <span class="skill-tag">JavaFX</span>
                         <span class="skill-tag">Git</span>
                         <span class="skill-tag">NetBeans</span>
+                        <span class="skill-tag">VS Code</span>
                     </div>
                 </div>
                 
@@ -658,6 +686,7 @@
                     <div class="skill-list">
                         <span class="skill-tag">Windows</span>
                         <span class="skill-tag">Android</span>
+                        <span class="skill-tag">Web</span>
                     </div>
                 </div>
                 
@@ -682,6 +711,21 @@
                 <p>Some of the projects I've worked on</p>
             </div>
             <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Nyangorora Banana Website</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML5</span>
+                            <span class="project-tag">CSS3</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Web Design</span>
+                        </div>
+                        <p>Designed and developed a professional website for Nyangorora Banana Processors, featuring a modern responsive design with interactive elements.</p>
+                        <p><strong>Technologies:</strong> HTML, CSS, JavaScript, Responsive Design</p>
+                        <p><strong>Result:</strong> Created an engaging online presence that showcases the company's products and values.</p>
+                    </div>
+                </div>
+                
                 <div class="project-card">
                     <div class="project-content">
                         <h3>Kwetu Nutrition Mobile App</h3>
